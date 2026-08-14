@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: yopass
+  namespace: yopass
+spec:
+  selector:
+    app: yopass
+  ports:
+    - port: 80
+      targetPort: 1337
