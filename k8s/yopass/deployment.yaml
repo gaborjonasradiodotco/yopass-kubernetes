@@ -6,7 +6,6 @@ metadata:
   labels:
     app: yopass
 spec:
-  # 2 pods, the hpa can make more but never less than 2
   replicas: 2
   selector:
     matchLabels:
@@ -19,19 +18,12 @@ spec:
       containers:
         - name: yopass
           image: jhaals/yopass:latest
-          # these flags tell yopass to use redis instead of memcached.
-          # --redis has to be a whole URL. i first wrote "redis:6379" and then
-          # yopass tried to connect to localhost and every secret failed with
-          # "Failed to store secret in database".
-          # "redis" in the middle is the name of the redis service, 0 is the db number.
           args:
             - "--database=redis"
             - "--redis=redis://redis:6379/0"
           ports:
             - name: http
               containerPort: 1337
-          # the hpa calculates the cpu percentage from the request below,
-          # so keep it small, then the pods are cheap when nothing happens
           resources:
             requests:
               cpu: 50m

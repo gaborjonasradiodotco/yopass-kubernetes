@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-IP=$(minikube ip -p yopass-poc)
+IP=$(minikube ip -p yopass)
 echo "minikube ip is $IP"
 
 if curl -s -o /dev/null --max-time 3 http://$IP; then

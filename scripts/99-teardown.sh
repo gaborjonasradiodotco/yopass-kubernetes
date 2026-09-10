@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if minikube status -p yopass-poc > /dev/null 2>&1; then
-  minikube delete -p yopass-poc
-  echo "minikube profile yopass-poc deleted."
+if minikube status -p yopass > /dev/null 2>&1; then
+  minikube delete -p yopass
+  echo "minikube profile yopass deleted."
 else
-  echo "There is no minikube profile called yopass-poc."
+  echo "There is no minikube profile called yopass."
 fi
 
 echo ""

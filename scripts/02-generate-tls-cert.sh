@@ -22,4 +22,4 @@ kubectl -n yopass create secret tls yopass-tls \
   --dry-run=client -o yaml | kubectl apply -f -
 
 echo ""
-echo "Done.
+echo "Done."

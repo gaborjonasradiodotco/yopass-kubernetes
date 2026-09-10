@@ -18,5 +18,4 @@ echo ""
 kubectl -n yopass get deploy,pods,svc,hpa,ingress
 
 echo ""
-echo "Next: ./scripts/04-add-hosts-entry.sh"
-echo "Then open https://yopass.radioco.local"
+echo "open https://yopass.radioco.local"

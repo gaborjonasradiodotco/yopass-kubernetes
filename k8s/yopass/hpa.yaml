@@ -16,5 +16,4 @@ spec:
         name: cpu
         target:
           type: Utilization
-          # 50% of the cpu request (50m) from deployment.yaml
           averageUtilization: 50
